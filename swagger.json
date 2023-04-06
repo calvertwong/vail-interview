@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
+    "title": "Vail interview REST API",
     "description": ""
   },
   "host": "localhost:30000",
@@ -20,7 +20,7 @@
               "type": "object",
               "properties": {
                 "message": {
-                  "example": "string"
+                  "type": "string"
                 }
               }
             }

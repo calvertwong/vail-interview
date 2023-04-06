@@ -1,15 +1,21 @@
 import express from "express";
-import { postRouter } from "./routes/post/ping";
-import { expressParser } from "./middlewares/ExpressParser";
-import swaggerUi from "swagger-ui-express"
-import swaggerDocument from "./swagger.json"
+import { invokeMiddlewares } from "./middlewares";
+import { invokeRoutes } from "./routes";
 
 export const server: express.Application = express();
 
-expressParser();
-server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+/**
+ * stored all middlewares in the middlewares folder to keep server.ts file clean
+ * call invokeMiddlewares() to server.use() all middlewares
+ */
+invokeMiddlewares();
 
-server.use("/api", postRouter);
+/**
+ * stored all routes in the routes folder to keep server.ts file clean
+ * call invokeRoutes() to server.use() all routes
+ */
+invokeRoutes();
+
 
 server.listen(30000, () => {
   console.log(`Server is running on port 30000.......`);

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -25,6 +25,7 @@
   "include": [
     "controllers/*",
     "entities/*",
+    "middlewares/*",
     "routes/*",
     "server.ts",
     "swagger.js"
