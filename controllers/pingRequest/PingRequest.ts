@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import axios from "axios";
 require("dotenv").config();
 import packageJson from "../../package.json";
+import { FinalResponseType } from "entities/FinalResponse";
 
 export const PingRequest = async (req: Request, res: Response) => {
   const { message }: { message: string } = req.body;
@@ -10,12 +11,7 @@ export const PingRequest = async (req: Request, res: Response) => {
     .get(`https://postman-echo.com/get?message=${message}`)
     .then((response) => {
 
-      const finalResponse: {
-        data: any;
-        env: string;
-        timeStamp: string;
-        buildVer: string;
-      } = {
+      const finalResponse: FinalResponseType = {
         data: response.data,
         env: process.env.ENV || "development",
         timeStamp: Math.floor(Date.now() / 1000).toString(),
