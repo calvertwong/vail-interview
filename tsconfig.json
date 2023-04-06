@@ -28,6 +28,7 @@
     "middlewares/*",
     "routes/*",
     "server.ts",
-    "swagger.js"
+    "swagger.js",
+    "__tests__/**.test.ts"
   ]
 }

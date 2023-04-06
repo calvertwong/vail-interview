@@ -1,5 +1,5 @@
 export type FinalResponseType = {
-  data: any;
+  output: any;
   env: string;
   timeStamp: string;
   buildVer: string;

@@ -12,7 +12,7 @@ export const PingRequest = async (req: Request, res: Response) => {
       `https://postman-echo.com/get?message=${message}`
     );
     const finalResponse: FinalResponseType = {
-      data: response.data,
+      output: response.data,
       env: process.env.ENV || "development",
       timeStamp: Math.floor(Date.now() / 1000).toString(),
       buildVer: packageJson.version,
