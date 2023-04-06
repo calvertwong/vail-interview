@@ -5,22 +5,21 @@ import packageJson from "../../package.json";
 import { FinalResponseType } from "entities/FinalResponse";
 
 export const PingRequest = async (req: Request, res: Response) => {
-  const { message }: { message: string } = req.body;
+  try {
+    const { message }: { message: string } = req.body;
 
-  axios
-    .get(`https://postman-echo.com/get?message=${message}`)
-    .then((response) => {
+    const response = await axios.get(
+      `https://postman-echo.com/get?message=${message}`
+    );
+    const finalResponse: FinalResponseType = {
+      data: response.data,
+      env: process.env.ENV || "development",
+      timeStamp: Math.floor(Date.now() / 1000).toString(),
+      buildVer: packageJson.version,
+    };
 
-      const finalResponse: FinalResponseType = {
-        data: response.data,
-        env: process.env.ENV || "development",
-        timeStamp: Math.floor(Date.now() / 1000).toString(),
-        buildVer: packageJson.version,
-      };
-
-      res.status(200).json(finalResponse);
-    })
-    .catch((error) => {
-      res.status(400).json(error);
-    });
+    res.status(200).json(finalResponse);
+  } catch (error) {
+    res.status(400).json(error);
+  }
 };
