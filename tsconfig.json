@@ -26,6 +26,7 @@
     "controllers/*",
     "entities/*",
     "routes/*",
-    "server.ts"
+    "server.ts",
+    "swagger.js"
   ]
 }
