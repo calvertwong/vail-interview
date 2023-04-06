@@ -5,7 +5,7 @@ npm run dev
 
 # Test project
 ```
-npm run Test
+npm run test
 ```
 
 # Available endpoints to test
