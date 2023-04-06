@@ -1,0 +1,19 @@
+{
+  "name": "vail-interview",
+  "version": "1.0.0",
+  "description": "Rest api for Vail Interview",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvertwong/vail-interview.git"
+  },
+  "author": "Cal Vert Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvertwong/vail-interview/issues"
+  },
+  "homepage": "https://github.com/calvertwong/vail-interview#readme"
+}
